@@ -24,7 +24,7 @@ public class Book {
     public int getNumpage() { return numPage; }
     
     private String stat = "available";
-    @JsonProperty("state")
+    @JsonProperty("status")
     public String getStatus() { return stat; }
 
     public void setIsbn(long isbn) {
