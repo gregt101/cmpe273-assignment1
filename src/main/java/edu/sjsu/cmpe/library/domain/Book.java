@@ -16,6 +16,7 @@ public class Book {
     public String getPubdate() { return pubDate; }
     
     private String language = "";
+    @JsonProperty("language")
     public String getLanguage() { return language; }
   
     private int numPage = 0;
@@ -23,6 +24,7 @@ public class Book {
     public int getNumpage() { return numPage; }
     
     private String status = "available";
+    @JsonProperty("status")
     public String getStatus() { return status; }
 
     public void setIsbn(long isbn) {
