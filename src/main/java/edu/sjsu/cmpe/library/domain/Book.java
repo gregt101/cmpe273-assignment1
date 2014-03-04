@@ -89,7 +89,7 @@ public class Book {
     	   (status.toLowerCase().contains("in-queue")||
     	   (status.toLowerCase().contains("lost"))
 		this.status = status.toLowerCase();
-	else if status==""
+	else if (status=="")
 	        this.status = "available";
 	else
 		this.status = "error";
