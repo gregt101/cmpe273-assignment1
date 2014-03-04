@@ -10,17 +10,17 @@ public class Book {
     private String title;
     public String getTitle() { return title; }
     
-    @JsonProperty("publication-date")
     @NotNull(message = "publication date is requied! ")
     private String pubDate;
-    //public String getPubdate() { return pubDate; }
+    @JsonProperty("publication-date")
+    public String getPubdate() { return pubDate; }
     
     private String language = "";
     public String getLanguage() { return language; }
-    
-    @JsonProperty("num-pages")
+  
     private int numPage = 0;
-    //public int getNumpage() { return numPage; }
+    @JsonProperty("num-pages")
+    public int getNumpage() { return numPage; }
     
     private String status = "available";
     public String getStatus() { return status; }
