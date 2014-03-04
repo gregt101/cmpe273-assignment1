@@ -40,10 +40,11 @@ public class BookResource {
     public BookDto getBookByIsbn(@PathParam("isbn") LongParam isbn) {
 	Book book = bookRepository.getBookByISBN(isbn.get());
 	BookDto bookResponse = new BookDto(book);
-	bookResponse.addLink(new LinkDto("view-book", "/books/" + book.getIsbn(),
-		"GET"));
-	bookResponse.addLink(new LinkDto("update-book",
-		"/books/" + book.getIsbn(), "POST"));
+	bookResponse.addLink(new LinkDto("view-book", "/books/" + book.getIsbn(), "GET"));
+	bookResponse.addLink(new LinkDto("update-book",	"/books/" + book.getIsbn(), "PUT"));
+	bookResponse.addLink(new LinkDto("delete-book",	"/books/" + book.getIsbn(), "DELETE"));
+	bookResponse.addLink(new LinkDto("create-book",	"/books/" + book.getIsbn(), "POST"));
+	bookResponse.addLink(new LinkDto("view-all-reviews", "/books/" + book.getIsbn(), "GET"));
 	// add more links
 
 	return bookResponse;
@@ -58,10 +59,32 @@ public class BookResource {
 	String location = "/books/" + savedBook.getIsbn();
 	BookDto bookResponse = new BookDto(savedBook);
 	bookResponse.addLink(new LinkDto("view-book", location, "GET"));
-	bookResponse.addLink(new LinkDto("update-book", location, "POST"));
+	bookResponse.addLink(new LinkDto("update-book", location, "PUT"));
+	bookResponse.addLink(new LinkDto("delete-book", location, "DELETE"));
+	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
 	// Add other links if needed
-
 	return Response.status(201).entity(bookResponse).build();
     }
+    /*
+    @PUT
+    @Path("/{isbn}")
+    @Timed(name = "update-book")
+    public BookDto updateBook(@PathParam("isbn") LongParam isbn,@PathParam("status") LongParam isbn) {
+	Book book = bookRepository.getBookByISBN(isbn.get());
+	BookDto bookResponse = new BookDto(book);
+	bookResponse.addLink(new LinkDto("view-book", "/books/" + book.getIsbn(),
+		"GET"));
+	bookResponse.addLink(new LinkDto("update-book",
+		"/books/" + book.getIsbn(), "POST"));
+	// add more links
+	bookResponse.addLink(new LinkDto("view-book", location, "POST"));
+	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
+	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
+	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
+	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
+
+	return Response.status(200).entity(bookResponse).build();
+    }
+    */
 }
 
