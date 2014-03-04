@@ -15,17 +15,15 @@ public class Book {
     @JsonProperty("publication-date")
     public String getPubdate() { return pubDate; }
     
-    private String language = "";
-    @JsonProperty("language")
-    public String getLanguage() { return language; }
+    private String lang = "";
+    public String getLanguage() { return lang; }
   
     private int numPage = 0;
     @JsonProperty("num-pages")
     public int getNumpage() { return numPage; }
     
-    private String status = "available";
-    @JsonProperty("status")
-    public String getStatus() { return status; }
+    private String stat = "available";
+    public String getStatus() { return stat; }
 
     public void setIsbn(long isbn) {
 	this.isbn = isbn;
