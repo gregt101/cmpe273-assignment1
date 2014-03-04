@@ -4,75 +4,45 @@ import javax.validation.constraints.NotNull;
 
 public class Book {
     private long isbn;
-//    @NotNull(message = "title is required! ")
+    public long getIsbn() { return isbn; }
+    
+    @NotNull(message = "title is required! ")
     private String title;
-//    @JsonProperty("publication-date")
+    public String getTitle() { return title; }
+    
+    //@JsonProperty("publication-date")
     @NotNull(message = "publication date is requied! ")
     private String pubDate;
+    public String getPubdate() { return @JsonProperty("publication-date") pubDate; }
+    
     private String language = "";
+    public String getLanguage() { return language; }
+    
     @JsonProperty("num-pages")
     private int numPage = 0;
+    //public int getNumpage() { return numPage; }
+    
     private String status = "available";
+    public String getStatus() { return status; }
 
-    // add more fields here
-
-    /**
-     * @return the isbn
-     */
-    public long getIsbn() {
-	return isbn;
-    }
-
-    /**
-     * @param isbn
-     *            the isbn to set
-     */
     public void setIsbn(long isbn) {
 	this.isbn = isbn;
     }
-
-    /**
-     * @return the title
-     */
-    public String getTitle() {
-	return title;
-    }
-
-    /**
-     * @param title
-     *            the title to set
-     */
+    
     public void setTitle(String title) {
 	this.title = title;
     }
-    
-//    public String getPubdate() {
-//	return pubDate;
-//    }
-
+ 
     public void setPubdate(String pubDate) {
-    	@JsonProperty("publication-date")
 	this.pubDate = pubDate;
-    }
-    
-    public String getLanguage() {
-	return language;
     }
 
     public void setLanguage(String language) {
 	this.language = language.toLowerCase();
     }
-    
-    public int getNumpage() {
-	return numPage;
-    }
 
     public void setNumpage(int numPage) {
 	this.numPage = numPage;
-    }
-    
-    public String getStatus() {
-	return status;
     }
 
     public void setStatus(String status) {
