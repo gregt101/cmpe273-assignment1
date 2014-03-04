@@ -4,9 +4,9 @@ import javax.validation.constraints.NotNull;
 
 public class Book {
     private long isbn;
-    @NotNull(message = "title is required! ")
+//    @NotNull(message = "title is required! ")
     private String title;
-    @JsonProperty("publication-date")
+//    @JsonProperty("publication-date")
     @NotNull(message = "publication date is requied! ")
     private String pubDate;
     private String language = "";
@@ -51,6 +51,7 @@ public class Book {
 //    }
 
     public void setPubdate(String pubDate) {
+    	@JsonProperty("publication-date")
 	this.pubDate = pubDate;
     }
     
