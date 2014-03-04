@@ -10,10 +10,10 @@ public class Book {
     private String title;
     public String getTitle() { return title; }
     
-    //@JsonProperty("publication-date")
+    @JsonProperty("publication-date")
     @NotNull(message = "publication date is requied! ")
     private String pubDate;
-    public String getPubdate() { return @JsonProperty("publication-date") pubDate; }
+    //public String getPubdate() { return pubDate; }
     
     private String language = "";
     public String getLanguage() { return language; }
