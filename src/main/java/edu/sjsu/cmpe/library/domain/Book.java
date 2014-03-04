@@ -84,16 +84,21 @@ public class Book {
     }
 
     public void setStatus(String status) {
-    	if((status.toLowerCase().contains("available")||
-    	   (status.toLowerCase().contains("checked-out")||
-    	   (status.toLowerCase().contains("in-queue")||
-    	   (status.toLowerCase().contains("lost"))
+    	if(status.toLowerCase().contains("available")||
+    	   status.toLowerCase().contains("checked-out")||
+    	   status.toLowerCase().contains("in-queue")||
+    	   status.toLowerCase().contains("lost"))
+    	   {
 		this.status = status.toLowerCase();
+    	   }
 	else if (status=="")
+	{
 	        this.status = "available";
+	}
 	else
+	{
 		this.status = "error";
-	
+	}
     }
     
 }
