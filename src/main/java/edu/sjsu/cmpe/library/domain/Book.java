@@ -16,6 +16,7 @@ public class Book {
     public String getPubdate() { return pubDate; }
     
     private String lang = "";
+    @JsonProperty("language")
     public String getLanguage() { return lang; }
   
     private int numPage = 0;
@@ -23,6 +24,7 @@ public class Book {
     public int getNumpage() { return numPage; }
     
     private String stat = "available";
+    @JsonProperty("state")
     public String getStatus() { return stat; }
 
     public void setIsbn(long isbn) {
@@ -37,29 +39,29 @@ public class Book {
 	this.pubDate = pubDate;
     }
 
-    public void setLanguage(String language) {
-	this.language = language.toLowerCase();
+    public void setLanguage(String lang) {
+	this.lang = lang.toLowerCase();
     }
 
     public void setNumpage(int numPage) {
 	this.numPage = numPage;
     }
 
-    public void setStatus(String status) {
-    	if(status.toLowerCase().contains("available")||
-    	   status.toLowerCase().contains("checked-out")||
-    	   status.toLowerCase().contains("in-queue")||
-    	   status.toLowerCase().contains("lost"))
+    public void setStatus(String stat) {
+    	if(stat.toLowerCase().contains("available")||
+    	   stat.toLowerCase().contains("checked-out")||
+    	   stat.toLowerCase().contains("in-queue")||
+    	   stat.toLowerCase().contains("lost"))
     	   {
-		this.status = status.toLowerCase();
+		this.stat = stat.toLowerCase();
     	   }
-	else if (status=="")
+	else if (stat=="")
 	{
-	        this.status = "available";
+	        this.stat = "available";
 	}
 	else
 	{
-		this.status = "error";
+		this.stat = "error";
 	}
     }
     
