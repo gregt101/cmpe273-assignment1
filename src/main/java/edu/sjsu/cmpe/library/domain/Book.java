@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Book {
     Random randomGenerator = new Random();
-    private long isbn = randomGenerator.nextInt(9999999999999);
+    private long isbn = randomGenerator.nextInt(999999999);
     @JsonProperty("isbn")
     public long getIsbn() { return isbn; }
     
