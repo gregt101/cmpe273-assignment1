@@ -1,9 +1,10 @@
-
 package edu.sjsu.cmpe.library.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Random;
 
 public class Author {
-    private long id;
+    Random randomGenerator = new Random();
+    private long id = randomGenerator.nextInt(99999999);
     
     @JsonProperty(required = true)
     private String name;
