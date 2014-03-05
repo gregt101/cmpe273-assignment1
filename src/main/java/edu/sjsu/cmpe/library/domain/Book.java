@@ -5,10 +5,12 @@ import java.util.List;
 
 public class Book {
     private long isbn;
+    @JsonProperty("isbn")
     public long getIsbn() { return isbn; }
     
     @NotNull(message = "title is required! ")
     private String title;
+    @JsonProperty("title")
     public String getTitle() { return title; }
     
     @NotNull(message = "publication date is requied! ")
@@ -29,6 +31,7 @@ public class Book {
     public String getStatus() { return stat; }
 
     private List<Author> authors;
+    @JsonProperty("authors")
     public  List<Author> getAuthors(){ return authors; }
     public  void setAuthors(List<Author> author) { this.authors = author; }
 
