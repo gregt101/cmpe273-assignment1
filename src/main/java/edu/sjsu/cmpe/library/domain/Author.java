@@ -1,3 +1,4 @@
+
 package edu.sjsu.cmpe.library.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
