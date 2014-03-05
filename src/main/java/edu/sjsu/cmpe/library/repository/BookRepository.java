@@ -16,6 +16,8 @@ public class BookRepository implements BookRepositoryInterface {
     /** Never access this key directly; instead use generateISBNKey() */
     
     private long isbnKey;
+    
+    Random randomGenerator = new Random();
 
     public BookRepository(ConcurrentHashMap<Long, Book> bookMap) {
 	checkNotNull(bookMap, "bookMap must not be null for BookRepository");
