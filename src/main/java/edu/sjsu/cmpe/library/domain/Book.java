@@ -34,6 +34,11 @@ public class Book {
     @JsonProperty("authors")
     public  List<Author> getAuthors(){ return authors; }
     public  void setAuthors(List<Author> author) { this.authors = author; }
+    
+    private List<Review> reviews;
+    @JsonProperty("reviews")
+    public  List<Review> getReviews(){ return reviews; }
+    public  void setReviews(List<Review> review) { this.reviews = review; }
 
     public void setIsbn(long isbn) {
 	this.isbn = isbn;
