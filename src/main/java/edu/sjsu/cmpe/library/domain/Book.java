@@ -2,11 +2,9 @@ package edu.sjsu.cmpe.library.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
-import java.util.Random;
 
 public class Book {
-    Random randomGenerator = new Random();
-    private long isbn = randomGenerator.nextInt(999999999);
+    private long isbn;
     @JsonProperty("isbn")
     public long getIsbn() { return isbn; }
     
