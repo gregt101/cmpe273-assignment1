@@ -7,17 +7,20 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import edu.sjsu.cmpe.library.domain.Book;
 
+import java.util.Random;
+
 public class BookRepository implements BookRepositoryInterface {
     /** In-memory map to store books. (Key, Value) -> (ISBN, Book) */
     private final ConcurrentHashMap<Long, Book> bookInMemoryMap;
 
     /** Never access this key directly; instead use generateISBNKey() */
+    
     private long isbnKey;
 
     public BookRepository(ConcurrentHashMap<Long, Book> bookMap) {
 	checkNotNull(bookMap, "bookMap must not be null for BookRepository");
 	bookInMemoryMap = bookMap;
-	isbnKey = 0;
+	isbnKey = randomGenerator.nextInt(999999999);
     }
 
     /**
