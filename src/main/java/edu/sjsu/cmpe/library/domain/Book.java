@@ -1,6 +1,7 @@
 package edu.sjsu.cmpe.library.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 public class Book {
     private long isbn;
@@ -26,6 +27,10 @@ public class Book {
     private String stat = "available";
     @JsonProperty("state")
     public String getStatus() { return stat; }
+
+    private List<Author> authors;
+    public  List<Author> getAuthors(){ return authors; }
+    public  void setAuthors(List<Author> author) { this.authors = author; }
 
     public void setIsbn(long isbn) {
 	this.isbn = isbn;
