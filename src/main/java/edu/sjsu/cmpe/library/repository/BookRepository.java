@@ -64,7 +64,7 @@ public class BookRepository implements BookRepositoryInterface {
     }
    
     @Override
-    public Book dropBookByISBN(Long isbn) {
+    public void dropBookByISBN(Long isbn) {
 	return bookInMemoryMap.remove(isbn);
     }
 
