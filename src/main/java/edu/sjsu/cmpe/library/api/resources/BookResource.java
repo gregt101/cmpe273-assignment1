@@ -66,7 +66,7 @@ public class BookResource {
 	return Response.status(201).entity(bookResponse).build();
     }
     
-    @DELETE
+    //@DELETE
     @Path("/{isbn}")
     @Timed(name = "delete-book")
     public Response deleteBook(@PathParam("isbn") LongParam isbn) {
