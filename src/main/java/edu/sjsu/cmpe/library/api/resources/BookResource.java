@@ -72,9 +72,9 @@ public class BookResource {
     public BookDto deleteBook(@PathParam("isbn") LongParam isbn) {
     	Book book = bookRepository.getBookByISBN(isbn.get());
     	String location = "/books/";
-    	bookResponse.addLink(new LinkDto("create-book", location, "POST"));
-        //bookResponse.deleteBook(book);
-        return Response.status(204).entity(bookResponse).build()
+    	LinkDto response = new LinkDto("create-book", location, "POST");
+        bookRepository.dropookByISBN(isbn.get());
+        return Response.status(204).entity(response).build()
     }
     /*
     @PUT
