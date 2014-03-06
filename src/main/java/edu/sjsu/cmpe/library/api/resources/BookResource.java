@@ -70,11 +70,12 @@ public class BookResource {
     @Path("/{isbn}")
     @Timed(name = "delete-book")
     public Response deleteBook(@PathParam("isbn") LongParam isbn) {
-    	Book book = bookRepository.getBookByISBN(isbn.get());
+    	//Book book = bookRepository.getBookByISBN(isbn.get());
 	String location = "/books/";
         //bookResponse.deleteBook(book);
+        bookRepository.dropBookByISBN(isbn.get());
         LinkDto response = new LinkDto("create-book", location, "POST");    
-        return bookResponse.status(204).entity(response).build();
+        return Response.status(204).entity(response).build();
     }
   
   /*
