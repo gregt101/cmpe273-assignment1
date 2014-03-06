@@ -65,7 +65,7 @@ public class BookResource {
 	// Add other links if needed
 	return Response.status(201).entity(bookResponse).build();
     }
-/*    
+    
     @DELETE
     @Path("/{isbn}")
     @Timed(name = "delete-book")
@@ -76,7 +76,7 @@ public class BookResource {
         LinkDto response = new LinkDto("create-book", location, "POST");    
         return bookResponse.status(204).entity(response).build();
     }
-*/  
+  
   /*
     @PUT
     @Path("/{isbn}")
