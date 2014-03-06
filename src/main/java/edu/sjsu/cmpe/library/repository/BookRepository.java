@@ -17,12 +17,13 @@ public class BookRepository implements BookRepositoryInterface {
     
     private long isbnKey;
     
-    Random randomGenerator = new Random();
+    //Random randomGenerator = new Random();
 
     public BookRepository(ConcurrentHashMap<Long, Book> bookMap) {
 	checkNotNull(bookMap, "bookMap must not be null for BookRepository");
 	bookInMemoryMap = bookMap;
-	isbnKey = randomGenerator.nextInt(999999999);
+	//isbnKey = randomGenerator.nextInt(999999999);
+	isbnKey = 1000;
     }
 
     /**
@@ -65,7 +66,7 @@ public class BookRepository implements BookRepositoryInterface {
    
     @Override
     public void dropBookByISBN(Long isbn) {
-	return bookInMemoryMap.remove(isbn);
+	bookInMemoryMap.remove(isbn);
     }
 
 }
