@@ -74,7 +74,7 @@ public class BookResource {
     	String location = "/books/";
     	bookResponse.addLink(new LinkDto("create-book", location, "POST"));
         //bookResponse.deleteBook(book);
-        return Response.status(204).entity(bookResponse).build()
+        return Response.status(204).entity(bookResponse).build();
     }
     /*
     @PUT
