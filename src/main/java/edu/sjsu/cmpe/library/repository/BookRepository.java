@@ -62,5 +62,10 @@ public class BookRepository implements BookRepositoryInterface {
 		"ISBN was %s but expected greater than zero value", isbn);
 	return bookInMemoryMap.get(isbn);
     }
+   
+    @Override
+    public void dropBookByISBN(Long isbn) {
+	return bookInMemoryMap.remove(isbn);
+    }
 
 }

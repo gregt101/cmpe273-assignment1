@@ -27,6 +27,12 @@ public interface BookRepositoryInterface {
      * @return a book instance
      */
     Book getBookByISBN(Long isbn);
-
-    // TODO: add other operations here!
+     
+     /**
+     * Drop book by ISBN
+     * 
+     * @param isbn
+     *            
+     */
+    void dropBookByISBN(Long isbn);
 }
