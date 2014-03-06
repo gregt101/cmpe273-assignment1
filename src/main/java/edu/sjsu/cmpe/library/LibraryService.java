@@ -12,6 +12,8 @@ import edu.sjsu.cmpe.library.config.LibraryServiceConfiguration;
 import edu.sjsu.cmpe.library.domain.Book;
 import edu.sjsu.cmpe.library.repository.BookRepository;
 import edu.sjsu.cmpe.library.repository.BookRepositoryInterface;
+import edu.sjsu.cmpe.library.domain.Author;
+import edu.sjsu.cmpe.library.domain.Review;
 
 public class LibraryService extends Service<LibraryServiceConfiguration> {
 
