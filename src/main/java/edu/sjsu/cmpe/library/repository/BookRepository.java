@@ -70,5 +70,13 @@ public class BookRepository implements BookRepositoryInterface {
     public void dropBookByISBN(Long isbn) {
 	bookInMemoryMap.remove(isbn);
     }
-
+    
+    public Book updateBook(Long isbn, String status) {
+    	 Book changeBook = bookInMemoryMap.get(isbn);
+    	 changeBook.setStatus(status);
+    	 bookInMemoryMap.put(isbn, changeBook);
+    	 
+    	
+    }
+   
 }
