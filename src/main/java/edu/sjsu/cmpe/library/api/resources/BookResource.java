@@ -83,7 +83,7 @@ public class BookResource {
     @PUT
     @Path("/{isbn}")
     @Timed(name = "update-book")
-	public Response updateBook(@PathParam("isbn") LongParam isbn, @QueryParam("status") StringParam status) {
+	public Response updateBook(@PathParam("isbn") LongParam isbn, @QueryParam("status") String status) {
 	
 	Book newBook = bookRepository.updateBook(isbn.get(),status.get());
 	
