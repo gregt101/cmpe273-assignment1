@@ -9,7 +9,7 @@ import edu.sjsu.cmpe.library.domain.Book;
 
 import java.util.Random;
 
-import java.io.*;
+//import java.io.*;
 
 public class BookRepository implements BookRepositoryInterface {
     /** In-memory map to store books. (Key, Value) -> (ISBN, Book) */
@@ -75,8 +75,7 @@ public class BookRepository implements BookRepositoryInterface {
     	 Book changeBook = bookInMemoryMap.get(isbn);
     	 changeBook.setStatus(status);
     	 bookInMemoryMap.put(isbn, changeBook);
-    	 
-    	
+    	 return bookInMemoryMap.get(isbn);
     }
    
 }
