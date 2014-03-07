@@ -86,7 +86,7 @@ public class BookResource {
     @Timed(name = "update-book")
 	public void updateBook(@PathParam("isbn") LongParam isbn, @QueryParam("status") String status) {
 	
-	Book newBook = bookRepository.updateBook(isbn.get(),status;
+	Book newBook = bookRepository.updateBook(isbn.get(),status);
 	/*
 	String location = "/books/" + newBook.getIsbn();
 	BookDto bookResponse = new BookDto(newBook);
