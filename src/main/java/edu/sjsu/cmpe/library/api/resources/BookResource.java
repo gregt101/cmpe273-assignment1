@@ -89,9 +89,9 @@ public class BookResource {
 	Book newBook = bookRepository.updateBook(isbn.get(),status);
 	
 	String location = "/books/" + newBook.getIsbn();
-/*
+
 	BookDto bookResponse = new BookDto(newBook);
-	bookResponse.addLink(new LinkDto("view-book", location, GET));
+/*	bookResponse.addLink(new LinkDto("view-book", location, GET));
 	bookResponse.addLink(new LinkDto("update-book", location, PUT));
 	bookResponse.addLink(new LinkDto("delete-book", location, DELETE));
 	bookResponse.addLink(new LinkDto("create-review", location + "/reviews", POST));
