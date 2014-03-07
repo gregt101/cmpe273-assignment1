@@ -9,6 +9,8 @@ import edu.sjsu.cmpe.library.domain.Book;
 
 import java.util.Random;
 
+import java.io.*;
+
 public class BookRepository implements BookRepositoryInterface {
     /** In-memory map to store books. (Key, Value) -> (ISBN, Book) */
     private final ConcurrentHashMap<Long, Book> bookInMemoryMap;
