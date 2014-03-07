@@ -35,4 +35,6 @@ public interface BookRepositoryInterface {
      *            
      */
     void dropBookByISBN(Long isbn);
+    
+    void updateBook(Long isbn, String status);
 }
