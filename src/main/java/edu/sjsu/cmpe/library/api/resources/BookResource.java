@@ -79,15 +79,15 @@ public class BookResource {
         LinkDto response = new LinkDto("create-book", location, "POST");    
         return Response.status(204).entity(response).build();
     }
-  /*
+  
     @PUT
     @Path("/{isbn}")
     @Timed(name = "update-book")
-	public BookDto updateBook(@PathParam("isbn") LongParam isbn, @QueryParam("status") String status) {
-	Book book = bookRepository.getBookByISBN(isbn.get());
-	BookDto bookResponse = new BookDto(book);
-
-	String location = "/books/" + book.getIsbn();
+	public Response updateBook(@PathParam("isbn") LongParam isbn, @QueryParam("status") String status) {
+	bookRepository.updateBook(isbn.get(),status.get());
+	Book newBook = bookRepository.getBookByISBN(isbn.get());
+	BookDto bookResponse = new BookDto(newBook);
+	String location = "/books/" + newBook.getIsbn();
 	bookResponse.addLink(new LinkDto("view-book", location, GET));
 	bookResponse.addLink(new LinkDto("update-book", location, PUT));
 	bookResponse.addLink(new LinkDto("delete-book", location, DELETE));
@@ -95,5 +95,5 @@ public class BookResource {
 
 	return Response.status(200).entity(bookResponse).build();
     }
- */
+ 
 }
