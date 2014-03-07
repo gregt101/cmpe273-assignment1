@@ -79,7 +79,7 @@ public class BookResource {
         LinkDto response = new LinkDto("create-book", location, "POST");    
         return Response.status(204).entity(response).build();
     }
-  
+  /*
     @PUT
     @Path("/{isbn}")
     @Timed(name = "update-book")
@@ -95,26 +95,5 @@ public class BookResource {
 
 	return Response.status(200).entity(bookResponse).build();
     }
-  
-  /*
-    @PUT
-    @Path("/{isbn}")
-    @Timed(name = "update-book")
-    public BookDto updateBook(@PathParam("isbn") LongParam isbn,@PathParam("status") LongParam isbn) {
-	Book book = bookRepository.getBookByISBN(isbn.get());
-	BookDto bookResponse = new BookDto(book);
-	bookResponse.addLink(new LinkDto("view-book", "/books/" + book.getIsbn(),
-		"GET"));
-	bookResponse.addLink(new LinkDto("update-book",
-		"/books/" + book.getIsbn(), "POST"));
-	// add more links
-	bookResponse.addLink(new LinkDto("view-book", location, "POST"));
-	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
-	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
-	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
-	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
-
-	return Response.status(200).entity(bookResponse).build();
-    }
-    */
+ */
 }
