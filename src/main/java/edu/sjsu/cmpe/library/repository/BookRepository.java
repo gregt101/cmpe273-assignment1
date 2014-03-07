@@ -46,6 +46,7 @@ public class BookRepository implements BookRepositoryInterface {
 	// Generate new ISBN
 	Long isbn = generateISBNKey();
 	newBook.setIsbn(isbn);
+	newBook.replace("available","lost");
 	// TODO: create and associate other fields such as author
 
 	// Finally, save the new book into the map
