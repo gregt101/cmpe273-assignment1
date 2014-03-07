@@ -87,7 +87,7 @@ public class BookResource {
 	public void updateBook(@PathParam("isbn") LongParam isbn, @QueryParam("status") String status) {
 	
 	Book newBook = bookRepository.updateBook(isbn.get(),status);
-	/*
+	
 	String location = "/books/" + newBook.getIsbn();
 	BookDto bookResponse = new BookDto(newBook);
 	bookResponse.addLink(new LinkDto("view-book", location, GET));
@@ -96,7 +96,7 @@ public class BookResource {
 	bookResponse.addLink(new LinkDto("create-review", location + "/reviews", POST));
 
 	return Response.status(200).entity(bookResponse).build();
-	*/
+	
     }
  
 }
