@@ -4,9 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Author {
 
-    private long id;
-    
     private long id = 10;
+    
     private final Long generateAuthorKey() {
     // increment existing authorKey and return the new value
         return Long.valueOf(++id);
