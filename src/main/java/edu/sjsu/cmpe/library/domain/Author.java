@@ -22,6 +22,6 @@ public class Author {
     }
 
     public void setId(long id) {
-	this.id = generateAuthorKey();
+	this.id = generateAuthorKey() + id;
     }
 }
