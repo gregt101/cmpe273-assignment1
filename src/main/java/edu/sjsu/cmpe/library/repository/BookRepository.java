@@ -28,9 +28,8 @@ public class BookRepository implements BookRepositoryInterface {
     private long authorKey;
     
     private long reviewKey;
-    
-    @JsonProperty
-    private List<Review> reviews = null;
+
+    private List<Review> reviews;
     
     //Random randomGenerator = new Random();
 
@@ -85,7 +84,7 @@ public class BookRepository implements BookRepositoryInterface {
     	 Book newReview = bookInMemoryMap.get(isbn);
     	 //Long idReview = generateReviewKey();
     	 //newReview.setReviews(review);
-  	 reviews = new List<Review>();
+  	 reviews = new ArrayList<Review>();
 	 reviews.add(review);
        	 newReview.setReviews(reviews);
     	 bookInMemoryMap.put(isbn, newReview);
