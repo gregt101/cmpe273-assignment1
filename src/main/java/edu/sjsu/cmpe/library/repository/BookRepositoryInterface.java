@@ -24,7 +24,7 @@ public interface BookRepositoryInterface {
     Book saveBook(Book newBook);
     
     //Book saveReview(Long isbn, Review review);
-    Long saveReview(Long isbn, Review review);
+    void saveReview(Long isbn, Review review);
 
     /**
      * Retrieve an existing book by ISBN
