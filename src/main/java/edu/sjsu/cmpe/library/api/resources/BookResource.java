@@ -106,7 +106,7 @@ public class BookResource {
 	   String location = "/books/" + reviewedBook.getIsbn() + "/reviews/" + idReview;
 	   BookDto bookResponse = new BookDto(reviewedBook);
 	   bookResponse.addLink(new LinkDto("view-review", location, "GET"));
-	   return Response.status(201).entity(links).build();
+	   return Response.status(201).entity(bookResponse).build();
 	}
  
 }
