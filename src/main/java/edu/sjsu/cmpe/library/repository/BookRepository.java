@@ -79,8 +79,8 @@ public class BookRepository implements BookRepositoryInterface {
     public Long saveReview(Long isbn, Review review) {
     	 Book newReview = bookInMemoryMap.get(isbn);
     	 Long idReview = generateReviewKey();
-    	 newReview.setReview(idReview,review);
-    	 bookInMemoryMap.putIfAbsent(isbn, newReview);
+    	 newReview.setReviews(review);
+    	 bookInMemoryMap.put(isbn, newReview);
     	 //return bookInMemoryMap.get(isbn);
     	 return idReview;
     }
