@@ -82,7 +82,9 @@ public class BookRepository implements BookRepositoryInterface {
     	 Book newReview = bookInMemoryMap.get(isbn);
     	 //Long idReview = generateReviewKey();
     	 //newReview.setReviews(review);
-    	 newReview.setReviews(List<review>);
+  	 List<Review> reviews = new List<Review>();
+	 reviews.add(review);
+       	 newReview.setReviews(reviews);
     	 bookInMemoryMap.put(isbn, newReview);
     	 //return bookInMemoryMap.get(isbn);
     	 //return idReview;
