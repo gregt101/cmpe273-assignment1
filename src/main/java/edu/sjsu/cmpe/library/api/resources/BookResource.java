@@ -95,4 +95,16 @@ public class BookResource {
 	return Response.status(200).entity(bookResponse).build();
     }
  
+ 	@POST
+	@Path("/{isbn}/reviews")
+	@Timed(name = "create-review")
+	   public Response createReview(@PathParam("isbn") LongParam isbn, Review review){
+	   Long idReview = bookRepository.saveReview(isbn.get(),review);
+	   String location = "/books/" + savedReview.getIsbn() + "/reviews/" + idReview;
+	   Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
+	   BookDto bookResponse = new BookDto(reviewedBook);
+	   bookResponse.addLink(new LinkDto("view-review", location, "GET"));
+	   return Response.status(201).entity(links).build();
+	}
+ 
 }
