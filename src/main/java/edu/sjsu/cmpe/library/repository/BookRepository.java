@@ -7,6 +7,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import edu.sjsu.cmpe.library.domain.Book;
 
+import edu.sjsu.cmpe.library.domain.Review;
+
+import edu.sjsu.cmpe.library.domain.Author;
+
 import java.util.Random;
 
 //import java.io.*;
@@ -19,6 +23,10 @@ public class BookRepository implements BookRepositoryInterface {
     
     private long isbnKey;
     
+    private long authorKey;
+    
+    private long reviewKey;
+    
     //Random randomGenerator = new Random();
 
     public BookRepository(ConcurrentHashMap<Long, Book> bookMap) {
@@ -26,6 +34,8 @@ public class BookRepository implements BookRepositoryInterface {
 	bookInMemoryMap = bookMap;
 	//isbnKey = randomGenerator.nextInt(999999999);
 	isbnKey = 1000;
+	authorKey = 3000;
+	reviewKey = 5000;
     }
 
     /**
@@ -37,6 +47,16 @@ public class BookRepository implements BookRepositoryInterface {
     private final Long generateISBNKey() {
 	// increment existing isbnKey and return the new value
 	return Long.valueOf(++isbnKey);
+    }
+    
+    private final Long generateAuthorKey() {
+	// increment existing authorKey and return the new value
+	return Long.valueOf(++authorKey);
+    }
+    
+    private final Long generateReviewKey() {
+	// increment existing reviewKey and return the new value
+	return Long.valueOf(++reviewKey);
     }
 
     /**
@@ -54,6 +74,14 @@ public class BookRepository implements BookRepositoryInterface {
 	bookInMemoryMap.putIfAbsent(isbn, newBook);
 
 	return newBook;
+    }
+    
+    public Book saveReview(Long isbn, Review review) {
+    	 Book newReview = bookInMemoryMap.get(isbn);
+    	 Long idReview = generateReviewKey();
+    	 newReview.setReview(idReview,review);
+    	 bookInMemoryMap.putIfAbsent(isbn, newReview);
+    	 return bookInMemoryMap.get(isbn);
     }
 
     /**
