@@ -6,6 +6,12 @@ public class Author {
 
     private long id;
     
+    private long id = 10;
+    private final Long generateAuthorKey() {
+    // increment existing authorKey and return the new value
+        return Long.valueOf(++id);
+    }
+    
     @JsonProperty(required = true)
     private String name;
     public String getName() { 
@@ -17,6 +23,6 @@ public class Author {
     }
 
     public void setId(long id) {
-	this.id = id;
+	this.id = generateAuthorKey();
     }
 }
