@@ -29,6 +29,9 @@ public class BookRepository implements BookRepositoryInterface {
     
     private long reviewKey;
     
+    @JsonProperty
+    private List<Review> reviews = null;
+    
     //Random randomGenerator = new Random();
 
     public BookRepository(ConcurrentHashMap<Long, Book> bookMap) {
@@ -82,7 +85,7 @@ public class BookRepository implements BookRepositoryInterface {
     	 Book newReview = bookInMemoryMap.get(isbn);
     	 //Long idReview = generateReviewKey();
     	 //newReview.setReviews(review);
-  	 List<Review> reviews = new List<Review>();
+  	 reviews = new List<Review>();
 	 reviews.add(review);
        	 newReview.setReviews(reviews);
     	 bookInMemoryMap.put(isbn, newReview);
