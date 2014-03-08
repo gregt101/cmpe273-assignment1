@@ -2,6 +2,10 @@ package edu.sjsu.cmpe.library.repository;
 
 import edu.sjsu.cmpe.library.domain.Book;
 
+import edu.sjsu.cmpe.library.domain.Author;
+
+import edu.sjsu.cmpe.library.domain.Review;
+
 /**
  * Book repository interface.
  * 
@@ -18,6 +22,8 @@ public interface BookRepositoryInterface {
      * @return a newly created book instance with auto-generated ISBN
      */
     Book saveBook(Book newBook);
+    
+    Book saveReview(Long isbn, Review review);
 
     /**
      * Retrieve an existing book by ISBN
