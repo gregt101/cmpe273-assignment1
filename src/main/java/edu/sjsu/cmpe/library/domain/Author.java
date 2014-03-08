@@ -1,22 +1,22 @@
 package edu.sjsu.cmpe.library.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Random;
+
 
 public class Author {
-    Random randomGenerator = new Random();
-    private long id = randomGenerator.nextInt(99999999);
+
+    private long id;
     
     @JsonProperty(required = true)
     private String name;
-    public String getName() { return name; }
+    public String getName() { 
+    	return name; 
+    }
 
-    public long getId()
-    {
+    public long getId() {
 	return id;
     }
 
-    public void setId(long id)
-    {
+    public void setId(long id) {
 	this.id = id;
     }
 }
