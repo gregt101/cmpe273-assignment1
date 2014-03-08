@@ -100,7 +100,7 @@ public class BookResource {
  	@POST
 	@Path("/{isbn}/reviews")
 	@Timed(name = "create-review")
-	   public Response createReview(@PathParam("isbn") LongParam isbn, Review review){
+	   public Response createReview(@PathParam("isbn") LongParam isbn, List review){
 	   Long idReview = bookRepository.saveReview(isbn.get(),review);
 	   Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
 	   String location = "/books/" + reviewedBook.getIsbn() + "/reviews/" + idReview;
