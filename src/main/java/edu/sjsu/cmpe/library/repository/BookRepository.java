@@ -11,7 +11,9 @@ import edu.sjsu.cmpe.library.domain.Review;
 
 import edu.sjsu.cmpe.library.domain.Author;
 
-import java.util.Random;
+import java.util.List;
+
+//import java.util.Random;
 
 //import java.io.*;
 
@@ -80,7 +82,7 @@ public class BookRepository implements BookRepositoryInterface {
     	 Book newReview = bookInMemoryMap.get(isbn);
     	 //Long idReview = generateReviewKey();
     	 //newReview.setReviews(review);
-    	 newReview.setReviews(review);
+    	 newReview.setReviews(List<review>);
     	 bookInMemoryMap.put(isbn, newReview);
     	 //return bookInMemoryMap.get(isbn);
     	 //return idReview;
