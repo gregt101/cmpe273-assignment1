@@ -217,7 +217,7 @@ public class BookResource {
 		authors = authorBook.getAuthors();
 		Long getID = id.get();
 		Integer authID = (int) (long) getID;
-		author = authors.get(authID);
+		author = authors.get(authID).getId();
 		AuthorDto authorResponse = new AuthorDto(author);
 		String location = "/books/" + isbn.get() + "/author/" + id.get();
 		authorResponse.addLink(new LinkDto("view-author", location, "GET"));
