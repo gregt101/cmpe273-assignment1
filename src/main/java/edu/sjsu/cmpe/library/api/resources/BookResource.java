@@ -217,7 +217,7 @@ public class BookResource {
 		authors = authorBook.getAuthors();
 		Long getID = id.get();
 		Integer authID = (int) (long) getID;
-		if authors.size() > 0 {
+		if (authors.size() > 0) {
 			author = authors.get(authID);
 			AuthorDto authorResponse = new AuthorDto(author);
 			String location = "/books/" + isbn.get() + "/author/" + id.get();
