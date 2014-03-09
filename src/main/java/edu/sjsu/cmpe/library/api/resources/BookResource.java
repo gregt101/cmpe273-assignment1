@@ -206,7 +206,6 @@ public class BookResource {
 		return Response.status(200).entity(authorResponse).build();
 	}
  
- 
  	@GET
 	@Path("/{isbn}/authors/{id}")
 	@Timed(name = "view-author")
@@ -220,17 +219,20 @@ public class BookResource {
 		String location = "/books/" + isbn.get() + "/author/" + id.get();
 		//LinkDto response = new LinkDto("view-author", location, "GET");
 
-			author.setId(authID);
-			author.setName(authors[authID].getName());
-			
-			AuthorDto authorResponse = new AuthorDto(author);
-			authorResponse.addLink(new LinkDto("view-author", location, "GET"));
-		
-			if (authorResponse==null){
-				String error = "Error with provided parameter ISBN";
-				return Response.status(400).entity(error).build();
-	 		}
-			else
+		for (int i=0; i<authorBook.getAuthors().size(); i++) {
+  			if (authors[i].getId()==id.get()) {
+  			author.setName(authors[i].getName());
+  			author.setId(authID);
+  			}
+		}
+		AuthorDto authorResponse = new AuthorDto(author);
+		authorResponse.addLink(new LinkDto("view-author", location, "GET"));
+	
+		if (authorResponse==null){
+			String error = "Error with provided parameter ISBN";
+			return Response.status(400).entity(error).build();
+		}
+		else
 			return Response.status(200).entity(authorResponse).build();	
 	}
 	

@@ -1,10 +1,11 @@
 package edu.sjsu.cmpe.library.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import java.util.Random;
 
 public class Author {
 
-    private long id = generateAuthorKey();
+    Random randomGenerator = new Random();
+    private long id = randomGenerator.nextInt(1000);;
     
     private final Long generateAuthorKey() {
     // increment existing authorKey and return the new value
