@@ -45,6 +45,7 @@ public class BookResource {
     public BookResource(BookRepositoryInterface bookRepository,ReviewRepositoryInterface reviewRepository) {
 	this.bookRepository = bookRepository;
 	this.reviewRepository = reviewRepository;
+	this.authorRepository = authorRepository;
     }
  
    //  public BookResource(ReviewRepositoryInterface reviewRepository) {
