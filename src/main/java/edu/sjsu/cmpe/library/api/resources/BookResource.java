@@ -37,8 +37,9 @@ public class BookResource {
      * @param bookRepository
      *            a BookRepository instance
      */
-    public BookResource(BookRepositoryInterface bookRepository) {
+    public BookResource(BookRepositoryInterface bookRepository, ReviewRepositoryInterface reviewRepository) {
 	this.bookRepository = bookRepository;
+	this.reviewRepository = reviewRepository;
     }
 
     @GET
