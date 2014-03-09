@@ -33,7 +33,7 @@ public class ReviewsDto extends LinksDto {
      *            the review to set
      */
     public void setReviews(ArrayList<Review> reviewArray) {
-	this.review = review;
+	this.reviews = reviewArray;
     }
     
 }
