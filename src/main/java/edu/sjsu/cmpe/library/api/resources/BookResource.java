@@ -175,7 +175,7 @@ public class BookResource {
 	public Response viewAuthorById(@PathParam("isbn") LongParam isbn , @PathParam("id") LongParam id) {
 		Book authorBook = bookRepository.getBookByISBN(isbn.get());
 		List authors = new ArrayList<Author>();
-		authors = book.getAuthors();
+		authors = authorBook.getAuthors();
 		Author author = authors.get(id.get());
 		AuthorDto authorResponse = new AuthorDto(author);
 		//Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
