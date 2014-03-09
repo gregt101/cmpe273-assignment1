@@ -71,7 +71,7 @@ public class BookResource {
 	// add more links
 	if(bookResponse==null){
 		String error = "Error with provided ISBN";
-		return Response.status(400).entity(error).build();
+		return BookDto.status(400).entity(error).build();
 	 }
 	else
 	return bookResponse;
