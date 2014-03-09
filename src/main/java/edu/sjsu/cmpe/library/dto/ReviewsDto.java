@@ -6,17 +6,17 @@ import edu.sjsu.cmpe.library.domain.Review;
 
 import java.util.ArrayList;
 
-//import java.util.List;
+import java.util.List;
 
 //@JsonPropertyOrder(alphabetic = true)
 @JsonPropertyOrder({"reviews" ,"links"})
 public class ReviewsDto extends LinksDto {
-    private ArrayList<Review> reviews;
+    private List<Review> reviews;
 
     /**
      * @param book
      */
-    public ReviewsDto(ArrayList<Review> reviewArray) {
+    public ReviewsDto(List<Review> reviewArray) {
 	super();
 	this.reviews = reviewArray;
     }
@@ -24,7 +24,7 @@ public class ReviewsDto extends LinksDto {
     /**
      * @return the review
      */
-    public ArrayList<Review> getReviews() {
+    public List<Review> getReviews() {
 	return reviews;
     }
 
@@ -32,7 +32,7 @@ public class ReviewsDto extends LinksDto {
      * @param review
      *            the review to set
      */
-    public void setReviews(ArrayList<Review> reviewArray) {
+    public void setReviews(List<Review> reviewArray) {
 	this.reviews = reviewArray;
     }
     
