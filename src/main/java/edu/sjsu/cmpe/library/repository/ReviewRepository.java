@@ -35,7 +35,7 @@ public class ReviewRepository implements ReviewRepositoryInterface {
     }
 
     @Override
-    public Book saveBook(Review newReview) {
+    public Book saveReview(Review newReview) {
 	    checkNotNull(newReview, "newReview instance must not be null");
 	    // Generate new rID
 	    Long rID = generateReviewKey();
