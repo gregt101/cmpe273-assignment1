@@ -217,11 +217,18 @@ public class BookResource {
 		authors = authorBook.getAuthors();
 		Long getID = id.get();
 		Integer authID = (int) (long) getID;
-		author = authors.get(authID).getId();
-		AuthorDto authorResponse = new AuthorDto(author);
-		String location = "/books/" + isbn.get() + "/author/" + id.get();
-		authorResponse.addLink(new LinkDto("view-author", location, "GET"));
-		return Response.status(200).entity(authorResponse).build();
+		if authors.size() > 0 {
+			author = authors.get(authID);
+			AuthorDto authorResponse = new AuthorDto(author);
+			String location = "/books/" + isbn.get() + "/author/" + id.get();
+			authorResponse.addLink(new LinkDto("view-author", location, "GET"));
+		}
+			if (authorResponse==null){
+				String error = "Error with provided parameter ISBN";
+				return Response.status(400).entity(error).build();
+	 		}
+			else
+			return Response.status(200).entity(authorResponse).build();	
 	}
 	
 	
