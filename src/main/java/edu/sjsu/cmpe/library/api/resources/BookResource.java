@@ -42,9 +42,9 @@ public class BookResource {
 	this.bookRepository = bookRepository;
     }
  
-     public BookResource(ReviewRepositoryInterface reviewRepository) {
-	this.reviewRepository = reviewRepository;
-    }
+   //  public BookResource(ReviewRepositoryInterface reviewRepository) {
+//	this.reviewRepository = reviewRepository;
+  //  }
 
 
     @GET
