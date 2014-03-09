@@ -176,7 +176,8 @@ public class BookResource {
 		Book authorBook = bookRepository.getBookByISBN(isbn.get());
 		List authors = new ArrayList<Author>();
 		authors = authorBook.getAuthors();
-		Author author = authors.get(id.get());
+		Integer i = (int) (long) id.get();
+		Author author = authors.get(i);
 		AuthorDto authorResponse = new AuthorDto(author);
 		//Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
 		String location = "/books/" + isbn.get() + "/author/" + id.get();
