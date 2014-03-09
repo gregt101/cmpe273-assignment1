@@ -96,7 +96,7 @@ public class BookResource {
 	bookResponse.addLink(new LinkDto("create-review", location + "/reviews"," POST"));
 	return Response.status(200).entity(bookResponse).build();
     }
- 
+ /*
  	@POST
 	@Path("/{isbn}/reviews")
 	@Timed(name = "create-review")
@@ -110,6 +110,19 @@ public class BookResource {
 	   //.addLink(new LinkDto("view-review", location, "GET"));
 	   //return Response.status(201).entity(bookResponse).build();
 	   return Response.status(201).entity(response).build();
+	}
+*/	
+	@GET
+	@Path("/{isbn}/reviews/{id}")
+	@Timed(name = "view-review")
+	public Response viewReviewById(@PathParam("isbn") LongParam isbn , @PathParam("id") LongParam id) {
+		Review review = reviewRepository.getReviewByID(id.get());
+		ReviewDto reviewResponse = new ReviewDto(review);
+		Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
+		String location = "/books/" + reviewedBook.getIsbn() + "/reviews/" + id.get();
+		LinkDto response = new LinkDto("view-review", location, "GET");
+		reviewResponse.addLink(new LinkDto("view-review", location, "GET"));
+		return Response.status(200).entity(response).build();
 	}
  
 }
