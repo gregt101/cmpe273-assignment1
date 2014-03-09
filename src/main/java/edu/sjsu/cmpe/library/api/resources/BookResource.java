@@ -44,7 +44,8 @@ public class BookResource {
      * @param bookRepository
      *            a BookRepository instance
      */
-    public BookResource(BookRepositoryInterface bookRepository,ReviewRepositoryInterface reviewRepository) {
+    public BookResource(BookRepositoryInterface bookRepository,ReviewRepositoryInterface reviewRepository,
+    AuthorRepositoryInterface authorRepository) {
 	this.bookRepository = bookRepository;
 	this.reviewRepository = reviewRepository;
 	this.authorRepository = authorRepository;
