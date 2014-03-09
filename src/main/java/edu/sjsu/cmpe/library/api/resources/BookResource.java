@@ -164,7 +164,7 @@ public class BookResource {
 		//Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
 		String location = "/books/" + isbn.get() + "/reviews/";
 		//LinkDto response = new LinkDto("view-review", location, "GET");
-		reviewResponse.addLink(new LinkDto("view-review", location, "GET"));
+		reviews.addLink(new LinkDto("view-review", location, "GET"));
 		return Response.status(200).entity(reviews).build();
 	}
  
