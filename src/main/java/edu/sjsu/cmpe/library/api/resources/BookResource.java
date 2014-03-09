@@ -36,6 +36,7 @@ public class BookResource {
     /** bookRepository instance */
     private final BookRepositoryInterface bookRepository;
     private final ReviewRepositoryInterface reviewRepository;
+    private final AuthorRepositoryInterface authorRepository;
 
     /**
      * BookResource constructor
