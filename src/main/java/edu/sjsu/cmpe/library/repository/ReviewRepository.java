@@ -23,7 +23,7 @@ public class ReviewRepository implements ReviewRepositoryInterface {
     
     private long reviewKey;
 
-    public ReviewRepository(ConcurrentHashMap<Long, Book> reviewMap) {
+    public ReviewRepository(ConcurrentHashMap<Long, Review> reviewMap) {
 	    checkNotNull(reviewMap, "reviewMap must not be null for ReviewRepository");
 	    reviewInMemoryMap = reviewMap;
 	    reviewKey = 10;
