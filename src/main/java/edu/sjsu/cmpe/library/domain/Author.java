@@ -22,6 +22,10 @@ public class Author {
     }
 
     public void setId(long id) {
-	this.id = generateAuthorKey() + id;
+	this.id = id;
+    }
+    
+     public void setName(String name) {
+	this.name = name;
     }
 }
