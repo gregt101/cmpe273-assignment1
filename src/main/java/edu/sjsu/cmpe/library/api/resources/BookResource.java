@@ -25,7 +25,7 @@ import edu.sjsu.cmpe.library.dto.ReviewsDto;
 import edu.sjsu.cmpe.library.repository.BookRepositoryInterface;
 import edu.sjsu.cmpe.library.repository.ReviewRepositoryInterface;
 
-//import java.util.List;
+import java.util.List;
 import java.util.ArrayList;
 
 @Path("/v1/books")
@@ -159,9 +159,9 @@ public class BookResource {
 	@Timed(name = "view-all-reviews")
 	public Response viewReviewById(@PathParam("isbn") LongParam isbn) {
 		Book book = bookRepository.getBookByISBN(isbn.get());
-		ArrayList<Review> reviews = book.getReviews();
-		//ArrayList reviews = new ArrayList<Review>();
-		//reviews = book.getReviews();
+		//List<Review> reviews = book.getReviews();
+		List reviews = new List<Review>();
+		reviews = book.getReviews();
 		ReviewsDto reviewResponse = new ReviewsDto(reviews);
 		//Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
 		//String location = "/books/" + isbn.get() + "/reviews/";
