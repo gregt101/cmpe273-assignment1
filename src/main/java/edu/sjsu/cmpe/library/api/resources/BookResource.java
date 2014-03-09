@@ -159,8 +159,9 @@ public class BookResource {
 	@Timed(name = "view-all-reviews")
 	public Response viewReviewById(@PathParam("isbn") LongParam isbn) {
 		Book book = bookRepository.getBookByISBN(isbn.get());
-		ArrayList reviews = new ArrayList<Review>();
-		reviews = book.getReviews();
+		ArrayList<Review> reviews = book.getReviews();
+		//ArrayList reviews = new ArrayList<Review>();
+		//reviews = book.getReviews();
 		ReviewsDto reviewResponse = new ReviewsDto(reviews);
 		//Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
 		//String location = "/books/" + isbn.get() + "/reviews/";
