@@ -160,12 +160,12 @@ public class BookResource {
 		Book book = bookRepository.getBookByISBN(isbn.get());
 		List reviews = new ArrayList<Review>();
 		reviews = book.getReviews();
-		//ReviewDto reviewResponse = new ReviewDto(reviews);
+		ReviewsDto reviewResponse = new ReviewDto(reviews);
 		//Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
-		String location = "/books/" + isbn.get() + "/reviews/";
+		//String location = "/books/" + isbn.get() + "/reviews/";
 		//LinkDto response = new LinkDto("view-review", location, "GET");
-		reviews.addLink(new LinkDto("view-review", location, "GET"));
-		return Response.status(200).entity(reviews).build();
+		//reviews.addLink(new LinkDto("view-review", location, "GET"));
+		return Response.status(200).entity(reviewResponse).build();
 	}
  
 }
