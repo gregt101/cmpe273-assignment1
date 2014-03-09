@@ -90,11 +90,11 @@ public class BookResource {
 	bookResponse.addLink(new LinkDto("delete-book", location, "DELETE"));
 	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
 	// Add other links if needed
-	if (bookResponse==null){
+/*	if (bookResponse==null){
 		String error = "Error with provided post request object Book";
 		return Response.status(400).entity(error).build();
 	}
-	else
+	else  */
 	return Response.status(201).entity(bookResponse).build();
     }
     
