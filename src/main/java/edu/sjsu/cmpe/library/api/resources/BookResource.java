@@ -21,7 +21,7 @@ import edu.sjsu.cmpe.library.domain.Review;
 import edu.sjsu.cmpe.library.dto.BookDto;
 import edu.sjsu.cmpe.library.dto.LinkDto;
 import edu.sjsu.cmpe.library.dto.ReviewDto;
-import edu.sjsu.cmpe.library.dto.Reviewsto;
+import edu.sjsu.cmpe.library.dto.ReviewsDto;
 import edu.sjsu.cmpe.library.repository.BookRepositoryInterface;
 import edu.sjsu.cmpe.library.repository.ReviewRepositoryInterface;
 
