@@ -41,7 +41,7 @@ public class BookRepository implements BookRepositoryInterface {
 	//isbnKey = randomGenerator.nextInt(999999999);
 	isbnKey = 1000;
 	authorKey = 3000;
-	reviewKey = 5000;
+//	reviewKey = 5000;
     }
 
     /**
@@ -59,12 +59,12 @@ public class BookRepository implements BookRepositoryInterface {
 	// increment existing authorKey and return the new value
 	return Long.valueOf(++authorKey);
     }
-    
+   /* 
     private final Long generateReviewKey() {
 	// increment existing reviewKey and return the new value
 	return Long.valueOf(++reviewKey);
     }
-
+*/
     /**
      * This will auto-generate unique ISBN for new books.
      */
