@@ -213,15 +213,14 @@ public class BookResource {
 	public void viewAuthorById(@PathParam("isbn") LongParam isbn , @PathParam("id") LongParam id) {
 		Book authorBook = bookRepository.getBookByISBN(isbn.get());
 		List authors = new ArrayList<Author>();
+		Author author = new Author();
 		authors = authorBook.getAuthors();
-	//	Integer i = (int) (long) id.get();
-	//	Author [] author = authors.get(i);
-	//	AuthorDto authorResponse = new AuthorDto(author);
-		//Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
-		//String location = "/books/" + isbn.get() + "/author/" + id.get();
-		//LinkDto response = new LinkDto("view-review", location, "GET");
-	//	authorResponse.addLink(new LinkDto("view-author", location, "GET"));
-		//return Response.status(200).entity(authorResponse).build();
+		Integer i = (int) (long) id.get()
+		author = authors.get(i);
+		AuthorDto authorResponse = new AuthorDto(author);
+		String location = "/books/" + isbn.get() + "/author/" + id.get();
+		authorResponse.addLink(new LinkDto("view-author", location, "GET"));
+		return Response.status(200).entity(authorResponse).build();
 	}
 	
 	
