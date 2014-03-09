@@ -69,7 +69,12 @@ public class BookResource {
 	bookResponse.addLink(new LinkDto("create-book",	"/books/" + book.getIsbn(), "POST"));
 	bookResponse.addLink(new LinkDto("view-all-reviews", "/books/" + book.getIsbn(), "GET"));
 	// add more links
-
+	if(bookResponse==null){
+		ErrorHandling error=new ErrorHandling();
+		error.setErrorDesc("Error with provided ISBN");
+		return Response.status(400).entity(error).build();
+	 }
+	else
 	return bookResponse;
     }
 
@@ -86,6 +91,12 @@ public class BookResource {
 	bookResponse.addLink(new LinkDto("delete-book", location, "DELETE"));
 	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
 	// Add other links if needed
+	if (bookResponse==null){
+		ErrorHandling error=new ErrorHandling();
+		error.setErrorDesc("Error with provided post request object Book");
+		return Response.status(400).entity(error).build();
+	}
+	else
 	return Response.status(201).entity(bookResponse).build();
     }
     
@@ -130,21 +141,27 @@ public class BookResource {
 	   return Response.status(201).entity(response).build();
 	}
 */	
-    @POST
-    @Path("/{isbn}/reviews")
-    @Timed(name = "create-review")
-    public Response createReview(@PathParam("isbn") LongParam isbn, Review review)
-    {	
-	Review newReview = reviewRepository.saveReview(review);
-	bookRepository.saveReview(isbn.get(),newReview);
-        String location = "/books/" + isbn.get() + "/reviews/" + newReview.getId();
-	LinkDto response = new LinkDto("view-review", location, "GET");
-	return Response.status(201).entity(response).build();
+	@POST
+ 	@Path("/{isbn}/reviews")
+    	@Timed(name = "create-review")
+        public Response createReview(@PathParam("isbn") LongParam isbn, Review review)
+    	{	
+		Review newReview = reviewRepository.saveReview(review);
+		bookRepository.saveReview(isbn.get(),newReview);
+		String location = "/books/" + isbn.get() + "/reviews/" + newReview.getId();
+		LinkDto response = new LinkDto("view-review", location, "GET");
+		if (response==null){
+			ErrorHandling error=new ErrorHandling();
+			error.setErrorDesc("Error with provided parameters ISBN and object Review");
+			return Response.status(400).entity(error).build();
+		}
+		else
+		return Response.status(201).entity(response).build();
 	//Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
 	//BookDto bookResponse = new BookDto(reviewedBook);
 	//bookResponse.addLink(new LinkDto("view-review", location, "GET"));
 	//return Response.status(201).entity(bookResponse).build();
-    }
+    	}
     
 	@GET
 	@Path("/{isbn}/reviews/{id}")
@@ -156,6 +173,12 @@ public class BookResource {
 		String location = "/books/" + isbn.get() + "/reviews/" + id.get();
 		//LinkDto response = new LinkDto("view-review", location, "GET");
 		reviewResponse.addLink(new LinkDto("view-review", location, "GET"));
+		if (reviewResponse==null){
+			ErrorHandling error=new ErrorHandling();
+			error.setErrorDesc("Error with provided parameters ISBN and ID");
+			return Response.status(400).entity(error).build();
+	 	}
+		else
 		return Response.status(200).entity(reviewResponse).build();
 	}
 	
@@ -167,6 +190,12 @@ public class BookResource {
 		List reviews = new ArrayList<Review>();
 		reviews = book.getReviews();
 		ReviewsDto reviewResponse = new ReviewsDto(reviews);
+		if (reviewResponse==null){
+			ErrorHandling error=new ErrorHandling();
+			error.setErrorDesc("Error with provided parameter ISBN");
+			return Response.status(400).entity(error).build();
+	 	}
+		else
 		return Response.status(200).entity(reviewResponse).build();
 	}
 	
@@ -178,6 +207,12 @@ public class BookResource {
 		List authors = new ArrayList<Author>();
 		authors = book.getAuthors();
 		AuthorsDto authorResponse = new AuthorsDto(authors);
+		if (authorResponse==null){
+			ErrorHandling error=new ErrorHandling();
+			error.setErrorDesc("Error with provided parameters ISBN");
+			return Response.status(400).entity(error).build();
+	 	}
+		else
 		return Response.status(200).entity(authorResponse).build();
 	}
  
