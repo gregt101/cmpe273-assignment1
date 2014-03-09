@@ -219,13 +219,13 @@ public class BookResource {
 		Integer authID = (int) (long) getID;
 		String location = "/books/" + isbn.get() + "/author/" + id.get();
 		//LinkDto response = new LinkDto("view-author", location, "GET");
-		if (authors<>null) {
+
 			author.setId(authID);
 			author.setName(authors[authID].getName());
 			
 			AuthorDto authorResponse = new AuthorDto(author);
 			authorResponse.addLink(new LinkDto("view-author", location, "GET"));
-		}
+		
 			if (authorResponse==null){
 				String error = "Error with provided parameter ISBN";
 				return Response.status(400).entity(error).build();
