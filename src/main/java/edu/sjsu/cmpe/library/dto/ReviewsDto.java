@@ -6,7 +6,7 @@ import edu.sjsu.cmpe.library.domain.Review;
 
 import java.util.ArrayList;
 
-import java.util.List;
+//import java.util.List;
 
 //@JsonPropertyOrder(alphabetic = true)
 @JsonPropertyOrder({"reviews" ,"links"})
@@ -24,7 +24,7 @@ public class ReviewsDto extends LinksDto {
     /**
      * @return the review
      */
-    public List<Review> getReviews() {
+    public ArrayList<Review> getReviews() {
 	return reviews;
     }
 
