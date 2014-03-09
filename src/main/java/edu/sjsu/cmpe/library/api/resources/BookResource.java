@@ -213,7 +213,8 @@ public class BookResource {
 	public Response viewAuthorById(@PathParam("isbn") LongParam isbn , @PathParam("id") LongParam id) {
 		Book authorBook = bookRepository.getBookByISBN(isbn.get());
 		Author author = new Author();
-		Author[] authors = authorBook.getAuthors();
+		
+		Author [] authors = authorBook.toArray(new Author[authorBook.getAuthors().size()]);
 		Long getID = id.get();
 		Integer authID = (int) (long) getID;
 		String location = "/books/" + isbn.get() + "/author/" + id.get();
