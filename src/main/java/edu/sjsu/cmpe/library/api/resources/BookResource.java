@@ -40,9 +40,11 @@ public class BookResource {
      */
     public BookResource(BookRepositoryInterface bookRepository) {
 	this.bookRepository = bookRepository;
-	this.reviewRepository = reviewRepository;
     }
  
+     public BookResource(ReviewRepositoryInterface reviewRepository) {
+	this.reviewRepository = reviewRepository;
+    }
 
 
     @GET
