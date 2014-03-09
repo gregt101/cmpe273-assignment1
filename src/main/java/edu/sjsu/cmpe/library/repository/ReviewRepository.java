@@ -35,7 +35,7 @@ public class ReviewRepository implements ReviewRepositoryInterface {
     }
 
     @Override
-    public Book saveReview(Review newReview) {
+    public Review saveReview(Review newReview) {
 	    checkNotNull(newReview, "newReview instance must not be null");
 	    // Generate new rID
 	    Long rID = generateReviewKey();
@@ -48,7 +48,7 @@ public class ReviewRepository implements ReviewRepositoryInterface {
     }
 
     @Override
-    public Book getReviewByID(Long id) {
+    public Review getReviewByID(Long id) {
 	    checkArgument(id > 0,
 		  "Review ID was %s but expected greater than zero value", id);
 	    return reviewInMemoryMap.get(id);
