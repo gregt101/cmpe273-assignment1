@@ -119,7 +119,7 @@ public class BookResource {
     {	
 	Review newReview = reviewRepository.saveReview(review);
 	bookRepository.saveReview(isbn.get(),newReview);
-        String location = "/books/" + isbn.get() + "/reviews/" + newReview.getId()
+        String location = "/books/" + isbn.get() + "/reviews/" + newReview.getId();
 	LinkDto response = new LinkDto("view-review", location, "GET");
 	return Response.status(201).entity(response).build();
 	//Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
