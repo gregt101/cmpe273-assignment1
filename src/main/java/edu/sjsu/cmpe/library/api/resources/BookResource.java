@@ -30,6 +30,7 @@ import edu.sjsu.cmpe.library.repository.ReviewRepositoryInterface;
 public class BookResource {
     /** bookRepository instance */
     private final BookRepositoryInterface bookRepository;
+    private final ReviewRepositoryInterface reviewRepository;
 
     /**
      * BookResource constructor
