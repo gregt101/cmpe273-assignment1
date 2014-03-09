@@ -168,7 +168,19 @@ public class BookResource {
 		ReviewsDto reviewResponse = new ReviewsDto(reviews);
 		return Response.status(200).entity(reviewResponse).build();
 	}
+	
+	@GET
+	@Path("/{isbn}/authors")
+	@Timed(name = "view-all-authors")
+	public Response viewReviewById(@PathParam("isbn") LongParam isbn) {
+		Book book = bookRepository.getBookByISBN(isbn.get());
+		List authors = new ArrayList<Author>();
+		authors = book.getAuthors();
+		AuthorsDto authorResponse = new ReviewsDto(authors);
+		return Response.status(200).entity(authorResponse).build();
+	}
  
+ /*
  	@GET
 	@Path("/{isbn}/authors/{id}")
 	@Timed(name = "view-author")
@@ -185,5 +197,7 @@ public class BookResource {
 		authorResponse.addLink(new LinkDto("view-author", location, "GET"));
 		return Response.status(200).entity(authorResponse).build();
 	}
+	
+	*/
  
 }
