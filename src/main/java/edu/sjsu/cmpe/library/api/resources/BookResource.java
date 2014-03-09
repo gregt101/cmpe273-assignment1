@@ -14,7 +14,6 @@ import javax.ws.rs.core.Response;
 
 import com.yammer.dropwizard.jersey.params.LongParam;
 import com.yammer.metrics.annotation.Timed;
-import edu.sjsu.cmpe.library.domain.ErrorHandling;
 
 import edu.sjsu.cmpe.library.domain.Book;
 import edu.sjsu.cmpe.library.domain.Author;
@@ -71,8 +70,7 @@ public class BookResource {
 	bookResponse.addLink(new LinkDto("view-all-reviews", "/books/" + book.getIsbn(), "GET"));
 	// add more links
 	if(bookResponse==null){
-		ErrorHandling error=new ErrorHandling();
-		error.setErrorDesc("Error with provided ISBN");
+		String error = "Error with provided ISBN";
 		return Response.status(400).entity(error).build();
 	 }
 	else
@@ -93,8 +91,7 @@ public class BookResource {
 	bookResponse.addLink(new LinkDto("create-review", location, "POST"));
 	// Add other links if needed
 	if (bookResponse==null){
-		ErrorHandling error=new ErrorHandling();
-		error.setErrorDesc("Error with provided post request object Book");
+		String error = "Error with provided post request object Book";
 		return Response.status(400).entity(error).build();
 	}
 	else
@@ -152,8 +149,7 @@ public class BookResource {
 		String location = "/books/" + isbn.get() + "/reviews/" + newReview.getId();
 		LinkDto response = new LinkDto("view-review", location, "GET");
 		if (response==null){
-			ErrorHandling error=new ErrorHandling();
-			error.setErrorDesc("Error with provided parameters ISBN and object Review");
+			String error = "Error with provided parameters ISBN and object Review";
 			return Response.status(400).entity(error).build();
 		}
 		else
@@ -175,8 +171,7 @@ public class BookResource {
 		//LinkDto response = new LinkDto("view-review", location, "GET");
 		reviewResponse.addLink(new LinkDto("view-review", location, "GET"));
 		if (reviewResponse==null){
-			ErrorHandling error=new ErrorHandling();
-			error.setErrorDesc("Error with provided parameters ISBN and ID");
+			String error = "Error with provided parameters ISBN and ID";
 			return Response.status(400).entity(error).build();
 	 	}
 		else
@@ -192,8 +187,7 @@ public class BookResource {
 		reviews = book.getReviews();
 		ReviewsDto reviewResponse = new ReviewsDto(reviews);
 		if (reviewResponse==null){
-			ErrorHandling error=new ErrorHandling();
-			error.setErrorDesc("Error with provided parameter ISBN");
+			String error = "Error with provided parameter ISBN";
 			return Response.status(400).entity(error).build();
 	 	}
 		else
@@ -209,8 +203,7 @@ public class BookResource {
 		authors = book.getAuthors();
 		AuthorsDto authorResponse = new AuthorsDto(authors);
 		if (authorResponse==null){
-			ErrorHandling error=new ErrorHandling();
-			error.setErrorDesc("Error with provided parameters ISBN");
+			String error = "Error with provided parameter ISBN";
 			return Response.status(400).entity(error).build();
 	 	}
 		else
