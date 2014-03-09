@@ -14,6 +14,7 @@ import javax.ws.rs.core.Response;
 
 import com.yammer.dropwizard.jersey.params.LongParam;
 import com.yammer.metrics.annotation.Timed;
+import edu.sjsu.cmpe.library.domain.ErrorHandling;
 
 import edu.sjsu.cmpe.library.domain.Book;
 import edu.sjsu.cmpe.library.domain.Author;
