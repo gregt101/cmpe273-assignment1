@@ -11,7 +11,7 @@ import java.util.ArrayList;
 //@JsonPropertyOrder(alphabetic = true)
 @JsonPropertyOrder({"reviews" ,"links"})
 public class ReviewsDto extends LinksDto {
-    private List<Review> reviews;
+    private ArrayList<Review> reviews;
 
     /**
      * @param book
