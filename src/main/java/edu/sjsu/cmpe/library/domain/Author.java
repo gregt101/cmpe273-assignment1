@@ -5,7 +5,7 @@ import java.util.Random;
 public class Author {
 
     Random randomGenerator = new Random();
-    private long id = randomGenerator.nextInt(1000);
+    private long id = randomGenerator.nextInt(30);
     
     private final Long generateAuthorKey() {
     // increment existing authorKey and return the new value
