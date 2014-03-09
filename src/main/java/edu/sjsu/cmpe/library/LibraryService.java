@@ -37,7 +37,9 @@ public class LibraryService extends Service<LibraryServiceConfiguration> {
 	/** Books APIs */
 	BookRepositoryInterface bookRepository = new BookRepository(
 		new ConcurrentHashMap<Long, Book>());
-	environment.addResource(new BookResource(bookRepository));
+	ReviewRepositoryInterface reviewRepository = new ReviewRepository(
+		new ConcurrentHashMap<Long, Review>());
+	environment.addResource(new BookResource(bookRepository,reviewRepository));
 	/** Add new resources here */
     }
 }
