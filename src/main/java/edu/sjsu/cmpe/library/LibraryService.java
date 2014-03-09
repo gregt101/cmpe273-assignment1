@@ -16,6 +16,8 @@ import edu.sjsu.cmpe.library.repository.BookRepository;
 import edu.sjsu.cmpe.library.repository.BookRepositoryInterface;
 import edu.sjsu.cmpe.library.repository.ReviewRepository;
 import edu.sjsu.cmpe.library.repository.ReviewRepositoryInterface;
+import edu.sjsu.cmpe.library.repository.AuthorRepository;
+import edu.sjsu.cmpe.library.repository.AuthorRepositoryInterface;
 
 
 public class LibraryService extends Service<LibraryServiceConfiguration> {
@@ -39,6 +41,8 @@ public class LibraryService extends Service<LibraryServiceConfiguration> {
 		new ConcurrentHashMap<Long, Book>());
 	ReviewRepositoryInterface reviewRepository = new ReviewRepository(
 		new ConcurrentHashMap<Long, Review>());
+	AuthorRepositoryInterface authorRepository = new AuthorRepository(
+		new ConcurrentHashMap<Long, Author>());
 	environment.addResource(new BookResource(bookRepository,reviewRepository));
 	/** Add new resources here */
     }
