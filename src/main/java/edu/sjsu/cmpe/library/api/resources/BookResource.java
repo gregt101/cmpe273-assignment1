@@ -24,6 +24,9 @@ import edu.sjsu.cmpe.library.dto.ReviewDto;
 import edu.sjsu.cmpe.library.repository.BookRepositoryInterface;
 import edu.sjsu.cmpe.library.repository.ReviewRepositoryInterface;
 
+import java.util.List;
+import java.util.ArrayList;
+
 @Path("/v1/books")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
