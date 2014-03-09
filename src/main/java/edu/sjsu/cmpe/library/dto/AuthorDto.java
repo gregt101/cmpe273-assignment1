@@ -19,7 +19,7 @@ public class AuthorDto extends LinksDto {
     /**
      * @return the author
      */
-    public Book getAuthor() {
+    public Author getAuthor() {
 	    return author;
     }
 
