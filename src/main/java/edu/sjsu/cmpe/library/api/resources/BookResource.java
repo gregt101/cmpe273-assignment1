@@ -177,7 +177,7 @@ public class BookResource {
 		Book book = bookRepository.getBookByISBN(isbn.get());
 		List authors = new ArrayList<Author>();
 		authors = book.getAuthors();
-		AuthorsDto authorResponse = new ReviewsDto(authors);
+		AuthorsDto authorResponse = new AuthorsDto(authors);
 		return Response.status(200).entity(authorResponse).build();
 	}
  
