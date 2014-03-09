@@ -69,11 +69,6 @@ public class BookResource {
 	bookResponse.addLink(new LinkDto("create-book",	"/books/" + book.getIsbn(), "POST"));
 	bookResponse.addLink(new LinkDto("view-all-reviews", "/books/" + book.getIsbn(), "GET"));
 	// add more links
-	if(bookResponse==null){
-		String error = "Error with provided ISBN";
-		return bookResponse.status(400).entity(error).build();
-	 }
-	else 
 	return bookResponse;
     }
 
