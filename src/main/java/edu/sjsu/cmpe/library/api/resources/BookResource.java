@@ -25,7 +25,7 @@ import edu.sjsu.cmpe.library.dto.ReviewsDto;
 import edu.sjsu.cmpe.library.repository.BookRepositoryInterface;
 import edu.sjsu.cmpe.library.repository.ReviewRepositoryInterface;
 
-import java.util.List;
+//import java.util.List;
 import java.util.ArrayList;
 
 @Path("/v1/books")
