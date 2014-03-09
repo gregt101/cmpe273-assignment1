@@ -214,7 +214,7 @@ public class BookResource {
 		Book authorBook = bookRepository.getBookByISBN(isbn.get());
 		Author author = new Author();
 		
-		Author [] authors = authorBook.getAuthor().toArray(new Author[authorBook.getAuthors().size()]);
+		Author [] authors = authorBook.getAuthors().toArray(new Author[authorBook.getAuthors().size()]);
 		Long getID = id.get();
 		Integer authID = (int) (long) getID;
 		String location = "/books/" + isbn.get() + "/author/" + id.get();
