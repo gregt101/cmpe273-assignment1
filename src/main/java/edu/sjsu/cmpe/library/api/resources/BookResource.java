@@ -221,7 +221,7 @@ public class BookResource {
 		//LinkDto response = new LinkDto("view-author", location, "GET");
 		if (authors.size() > 0) {
 			author.setId(authID);
-			author.setName(authors[authID].getName());
+			author.setName(authors.get(authID));
 			AuthorDto authorResponse = new AuthorDto(author);
 			authorResponse.addLink(new LinkDto("view-author", location, "GET"));
 		}
