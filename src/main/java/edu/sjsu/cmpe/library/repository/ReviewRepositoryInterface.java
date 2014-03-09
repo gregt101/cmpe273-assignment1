@@ -23,8 +23,7 @@ public interface ReviewRepositoryInterface {
      */
     Review saveReview(Review newReview);
     
-    Book saveReview(Review newReview);
-
+ 
     /**
      * Retrieve an existing review by ID
      * 
@@ -32,6 +31,6 @@ public interface ReviewRepositoryInterface {
      *            a valid ID
      * @return a review instance
      */
-     Book getReviewByID(Long id);
+     Review getReviewByID(Long id);
 
 }
