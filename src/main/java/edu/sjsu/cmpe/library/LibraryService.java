@@ -43,7 +43,7 @@ public class LibraryService extends Service<LibraryServiceConfiguration> {
 		new ConcurrentHashMap<Long, Review>());
 	AuthorRepositoryInterface authorRepository = new AuthorRepository(
 		new ConcurrentHashMap<Long, Author>());
-	environment.addResource(new BookResource(bookRepository,reviewRepository));
+	environment.addResource(new BookResource(bookRepository,reviewRepository,authorRepository));
 	/** Add new resources here */
     }
 }
