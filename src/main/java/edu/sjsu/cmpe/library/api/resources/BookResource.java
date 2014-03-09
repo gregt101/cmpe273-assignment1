@@ -219,7 +219,7 @@ public class BookResource {
 		Integer authID = (int) (long) getID;
 		String location = "/books/" + isbn.get() + "/author/" + id.get();
 		//LinkDto response = new LinkDto("view-author", location, "GET");
-		if (authors.size() > 0) {
+		if (authors<>null) {
 			author.setId(authID);
 			author.setName(authors[authID].getName());
 			
