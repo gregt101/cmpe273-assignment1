@@ -159,14 +159,9 @@ public class BookResource {
 	@Timed(name = "view-all-reviews")
 	public Response viewReviewById(@PathParam("isbn") LongParam isbn) {
 		Book book = bookRepository.getBookByISBN(isbn.get());
-		//List<Review> reviews = book.getReviews();
 		List reviews = new ArrayList<Review>();
 		reviews = book.getReviews();
 		ReviewsDto reviewResponse = new ReviewsDto(reviews);
-		//Book reviewedBook = bookRepository.getBookByISBN(isbn.get());
-		//String location = "/books/" + isbn.get() + "/reviews/";
-		//LinkDto response = new LinkDto("view-review", location, "GET");
-		//reviews.addLink(new LinkDto("view-review", location, "GET"));
 		return Response.status(200).entity(reviewResponse).build();
 	}
  
