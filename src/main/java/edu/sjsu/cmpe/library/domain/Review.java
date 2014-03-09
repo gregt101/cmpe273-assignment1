@@ -2,7 +2,7 @@ package edu.sjsu.cmpe.library.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.*;
 public class Review {
-	private long id = 10 + getId();
+	private long id;// = 10 + getId();
 	private final Long generateReviewKey() {
 	// increment existing authorKey and return the new value
 	    return Long.valueOf(++id);
@@ -15,7 +15,7 @@ public class Review {
 	@NotNull(message = "comment cannot be empty")
 	private String comment;
 	public long getId() { return id; }
-	public void setId(long id) { this.id = generateReviewKey(); }
+	public void setId(long id) { this.id = id; }
 	public int getRating() { return rating; }
 	public void setRating(int rating) { this.rating = rating; }
 	public String getComment() { return comment; }
