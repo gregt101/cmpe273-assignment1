@@ -172,7 +172,7 @@ public class BookResource {
  	@GET
 	@Path("/{isbn}/authors/{id}")
 	@Timed(name = "view-author")
-	public Response viewReviewById(@PathParam("isbn") LongParam isbn , @PathParam("id") LongParam id) {
+	public Response viewAuthorById(@PathParam("isbn") LongParam isbn , @PathParam("id") LongParam id) {
 		Book authorBook = bookRepository.getBookByISBN(isbn.get());
 		List authors = new ArrayList<Author>();
 		authors = book.getAuthors();
