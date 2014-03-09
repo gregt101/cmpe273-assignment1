@@ -24,6 +24,7 @@ import edu.sjsu.cmpe.library.dto.ReviewDto;
 import edu.sjsu.cmpe.library.dto.ReviewsDto;
 import edu.sjsu.cmpe.library.repository.BookRepositoryInterface;
 import edu.sjsu.cmpe.library.repository.ReviewRepositoryInterface;
+import edu.sjsu.cmpe.library.repository.AuthorRepositoryInterface;
 
 import java.util.List;
 import java.util.ArrayList;
