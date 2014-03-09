@@ -19,7 +19,7 @@ public class ReviewDto extends LinksDto {
     /**
      * @return the review
      */
-    public Book getReview() {
+    public Review getReview() {
 	return review;
     }
 
